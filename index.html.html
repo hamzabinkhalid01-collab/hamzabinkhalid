@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamza Bin Khalid — Graphic &amp; Social Media Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#111111;--bg2:#181818;--bg3:#202020;--surface:#272727;
+  --text:#F0EDE8;--muted:#7A756E;--subtle:#363030;
+  --accent:#E85D26;--al:rgba(232,93,38,.11);
+  --border:rgba(240,237,232,.07);--green:#3DD68C;--r:3px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 52px;background:rgba(17,17,17,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'DM Serif Display',serif;font-size:21px;color:var(--text);text-decoration:none}
+.logo em{color:var(--accent);font-style:normal}
+.nav-r{display:flex;gap:28px;align-items:center;list-style:none}
+.nav-r a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-r a:hover{color:var(--text)}
+.nav-cv{background:var(--accent)!important;color:#fff!important;padding:8px 20px;border-radius:var(--r);font-weight:600!important;font-size:13px!important;transition:opacity .2s!important}
+.nav-cv:hover{opacity:.85!important}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:300px 1fr 340px;gap:48px;align-items:center;padding:130px 52px 90px}
+
+/* HERO PHOTO */
+.h-photo{position:relative;align-self:center}
+.h-photo-frame{width:100%;aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:var(--bg3);border:1px solid var(--border);position:relative}
+.h-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:grayscale(8%)}
+
+.h-photo-badge{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(17,17,17,.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:100px;padding:6px 16px;white-space:nowrap;font-size:12px;font-weight:600;color:var(--text);letter-spacing:.02em}
+.h-tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:26px}
+.h-tag::before{content:'';width:28px;height:1px;background:var(--accent)}
+.h-name{font-family:'DM Serif Display',serif;font-size:clamp(36px,5.5vw,72px);line-height:1.0;letter-spacing:-.025em;margin-bottom:10px}
+.h-role{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,32px);font-style:italic;color:var(--muted);margin-bottom:32px;min-height:40px}
+.h-role span{color:var(--accent);font-style:italic;display:inline-block;transition:opacity .28s,transform .28s}
+.h-role span.fade{opacity:0;transform:translateY(6px)}
+.h-bio{font-size:17px;color:var(--muted);line-height:1.78;max-width:530px;margin-bottom:44px}
+.h-bio strong{color:var(--text);font-weight:500}
+.h-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-p{background:var(--accent);color:#fff;padding:13px 28px;border-radius:var(--r);font-weight:600;font-size:15px;text-decoration:none;transition:opacity .2s,transform .15s;display:inline-block}
+.btn-p:hover{opacity:.88;transform:translateY(-1px)}
+.btn-g{border:1px solid var(--border);color:var(--text);padding:13px 28px;border-radius:var(--r);font-weight:500;font-size:15px;text-decoration:none;transition:border-color .2s,background .2s;display:inline-block}
+.btn-g:hover{border-color:rgba(240,237,232,.22);background:rgba(240,237,232,.04)}
+
+/* HERO CARD */
+.h-card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:30px;align-self:center}
+.hc-label{font-size:11px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.sk-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border)}
+.sk-row:last-of-type{border-bottom:none}
+.sk-name{font-size:14px;font-weight:500}
+.sk-track{width:110px;height:3px;background:var(--subtle);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;background:var(--accent);border-radius:2px;transform-origin:left;transform:scaleX(0);transition:transform .85s cubic-bezier(.16,1,.3,1)}
+.sk-fill.go{transform:scaleX(1)}
+.hc-div{border:none;border-top:1px solid var(--border);margin:22px 0}
+.avail-row{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500}
+.avail-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(61,214,140,.15);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(61,214,140,.15)}50%{box-shadow:0 0 0 7px rgba(61,214,140,.04)}}
+
+/* DIVIDER */
+.hr{border:none;border-top:1px solid var(--border);margin:0 52px}
+
+/* SECTION */
+.sec{padding:92px 52px}
+.s-lbl{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:13px}
+.s-h{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,48px);letter-spacing:-.025em;line-height:1.08;margin-bottom:15px}
+.s-sub{font-size:16px;color:var(--muted);max-width:500px;line-height:1.65}
+
+/* CLIENTS TICKER */
+#clients{padding:48px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.ticker-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+.ticker-wrap{overflow:hidden;position:relative}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.ticker-wrap::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.ticker-track{display:flex;gap:0;animation:ticker 44s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{display:flex;align-items:center;gap:14px;padding:0 36px;white-space:nowrap;font-size:17px;font-weight:600;color:var(--text);font-family:'DM Serif Display',serif;letter-spacing:-.01em;transition:color .2s}
+.ticker-item:hover{color:var(--accent)}
+.ticker-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;opacity:.6}
+.int-tag{font-size:11px;color:var(--accent);font-style:normal;margin-left:5px;font-weight:600;font-family:'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+
+/* WORK */
+#work .w-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.w-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.wc{grid-column:span 4}
+.wc--w6{grid-column:span 6}
+.wc--w8{grid-column:span 8}
+.wc-inner{background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden;height:100%;transition:border-color .25s,transform .25s}
+.wc-inner:hover{border-color:rgba(232,93,38,.3);transform:translateY(-3px)}
+.wc-thumb{aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.wc--w8 .wc-thumb{aspect-ratio:21/9}
+.t-bg{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,62px);color:var(--accent);opacity:.09;user-select:none;letter-spacing:-.03em;position:absolute}
+.t-badge{position:absolute;bottom:12px;left:12px;background:rgba(17,17,17,.82);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:2px;padding:4px 10px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.t-hint{position:absolute;top:12px;right:12px;background:var(--al);border:1px dashed rgba(232,93,38,.35);border-radius:2px;padding:3px 8px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);opacity:.75}
+.wc-body{padding:18px 20px 22px}
+.wc-tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.wc-title{font-family:'DM Serif Display',serif;font-size:18px;line-height:1.25;margin-bottom:7px;letter-spacing:-.01em}
+.wc-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.wc-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;margin-top:10px;opacity:.8;transition:opacity .2s}
+.wc-link:hover{opacity:1}
+.wc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.btn-view-more{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:8px 16px;border-radius:var(--r);font-size:12px;font-weight:600;text-decoration:none;transition:opacity .2s,transform .15s;letter-spacing:.02em}
+.btn-view-more:hover{opacity:.88;transform:translateY(-1px)}
+
+/* TOOLS SECTIONS */
+#tools{padding:80px 52px}
+#tools .tools-sections{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:52px}
+.tools-section-title{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.tool-logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tool-logo-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:border-color .2s,transform .2s;cursor:default}
+.tool-logo-card:hover{border-color:rgba(232,93,38,.35);transform:translateY(-2px)}
+.tool-logo-card img{width:36px;height:36px;object-fit:contain;filter:grayscale(20%)}
+.tool-logo-card span{font-size:12px;font-weight:600;color:var(--muted);text-align:center;line-height:1.3}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+#about .a-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px}
+.a-copy p{font-size:16px;color:var(--muted);line-height:1.82;margin-bottom:18px}
+.a-copy p strong{color:var(--text);font-weight:500}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.tool-chip{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:11px 16px;font-size:13px;font-weight:500;color:var(--muted);display:flex;align-items:center;gap:9px;transition:border-color .2s,color .2s}
+.tool-chip:hover{border-color:var(--accent);color:var(--text)}
+.a-aside{display:flex;flex-direction:column;gap:18px}
+.aside-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:24px}
+.ac-lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+.ac-big{font-family:'DM Serif Display',serif;font-size:42px;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.ac-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.45}
+.spec-list{list-style:none}
+.spec-list li{padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:500;display:flex;align-items:center;gap:10px;color:var(--text)}
+.spec-list li:last-child{border-bottom:none}
+.spec-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.industries{display:flex;flex-wrap:wrap;gap:8px}
+.ind-chip{background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:500;color:var(--muted)}
+
+/* CONTACT */
+#contact{text-align:center;padding:112px 52px;position:relative;overflow:hidden}
+.cg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:320px;background:radial-gradient(ellipse,rgba(232,93,38,.065) 0%,transparent 65%);pointer-events:none}
+#contact .s-h{max-width:560px;margin:14px auto 18px}
+#contact .s-sub{margin:0 auto 42px;text-align:center}
+.contact-methods{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.c-method{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:16px 24px;text-decoration:none;transition:border-color .2s,transform .15s}
+.c-method:hover{border-color:rgba(232,93,38,.4);transform:translateY(-2px)}
+.c-method-icon{font-size:18px}
+.c-method-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.c-method-value{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--accent);letter-spacing:.04em}
+
+/* FOOTER */
+footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:13px;color:var(--muted)}
+.f-links{display:flex;gap:22px}
+.f-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:var(--text)}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.r.v{opacity:1;transform:none}
+.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}
+
+/* MOBILE */
+@media(max-width:1024px){
+  #hero{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .h-photo{grid-row:1/3;grid-column:1}
+  .hero-left{grid-column:2}
+  .h-card{grid-column:2}
+}
+@media(max-width:860px){
+  nav{padding:16px 20px}
+  .nav-r li:not(:last-child){display:none}
+  #hero{grid-template-columns:1fr;padding:100px 20px 60px;gap:36px}
+  .h-photo{display:none}
+  .h-card{display:none}
+  .hr{margin:0 20px}
+  .sec{padding:68px 20px}
+  #tools{padding:60px 20px}
+  #tools .tools-sections{grid-template-columns:1fr;gap:36px}
+  .tool-logo-grid{grid-template-columns:repeat(3,1fr)}
+  #contact{padding:80px 20px}
+  .w-top{flex-direction:column;align-items:flex-start;gap:14px}
+  .w-grid{grid-template-columns:1fr}
+  .wc,.wc--w6,.wc--w8{grid-column:span 1}
+  #about .a-grid{grid-template-columns:1fr;gap:40px}
+  footer{flex-direction:column;gap:14px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="logo">Hamza Bin Khalid<em>.</em></a>
+  <ul class="nav-r">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="hamza-cv.pdf" download class="nav-cv">Download CV</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <!-- PHOTO COLUMN -->
+  <div class="h-photo r">
+    <div class="h-photo-frame">
+      <img src="hamza.jpg" alt="Hamza Bin Khalid" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    </div>
+    <div class="h-photo-badge">Hamza Bin Khalid · Graphic Designer</div>
+  </div>
+
+  <div class="hero-left">
+    <div class="h-tag">Open to full-time &amp; remote roles</div>
+    <h1 class="h-name">Hamza Bin Khalid</h1>
+    <p class="h-role">Available as a <span id="roleWord">Graphic Designer</span></p>
+    <p class="h-bio">
+      Lahore-based designer with <strong>4+ years of experience</strong> and <strong>50+ clients</strong> — from Lahore startups to a UK restaurant to a US wellness brand. I make brands look credible, consistent, and scroll-stopping across every platform.
+    </p>
+    <div class="h-actions">
+      <a href="#work" class="btn-p">View My Work</a>
+      <a href="hamza-cv.pdf" download class="btn-g">Download CV ↓</a>
+    </div>
+  </div>
+
+  <div class="h-card r">
+    <p class="hc-label">Skills at a glance</p>
+    <div class="sk-row"><span class="sk-name">Social Media Design</span><div class="sk-track"><div class="sk-fill" data-w="0.95"></div></div></div>
+    <div class="sk-row"><span class="sk-name">Adobe Photoshop</span><div class="sk-track"><div class="sk-fill" data-w="0.90"></div></div></div>
+    <div class="sk-row"><span class="sk-name">Adobe Illustrator</span><div class="sk-track"><div class="sk-fill" data-w="0.85"></div></div></div>
+    <div class="sk-row"><span class="sk-name">AI Image Generation</span><div class="sk-track"><div class="sk-fill" data-w="0.88"></div></div></div>
+    <div class="sk-row"><span class="sk-name">Print &amp; Billboard</span><div class="sk-track"><div class="sk-fill" data-w="0.82"></div></div></div>
+    <hr class="hc-div">
+    <div class="avail-row"><div class="avail-dot"></div>Available for full-time &amp; remote roles</div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<div id="clients">
+  <p class="ticker-label">Clients worked with</p>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-dot"></span>1Stop Solar Solutions</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Hockey Matchstick</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Arryn Couture</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Clear Bio Relief <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Driveline Driving School <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Izhar Concrete</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Izhar Farms</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Vohra &amp; Saigol Men</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Vohra &amp; Saigol Women</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Aftab Lifestyle</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Zen Med Spa <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Livinart</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>The Grill Heist <em class="int-tag">UK</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Optic World</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Retrofit Store</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Connect With Taar</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Burger 3000 <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>OVOX <em class="int-tag">UK</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Agile Emotional Intelligence</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>1Stop Solar Solutions</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Hockey Matchstick</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Arryn Couture</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Clear Bio Relief <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Driveline Driving School <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Izhar Concrete</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Izhar Farms</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Vohra &amp; Saigol Men</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Vohra &amp; Saigol Women</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Aftab Lifestyle</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Zen Med Spa <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Livinart</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>The Grill Heist <em class="int-tag">UK</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Optic World</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Retrofit Store</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Connect With Taar</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Burger 3000 <em class="int-tag">USA</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>OVOX <em class="int-tag">UK</em></span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Agile Emotional Intelligence</span>
+    </div>
+  </div>
+</div>
+
+<hr class="hr">
+
+<section id="work" class="sec">
+  <div class="w-top">
+    <div>
+      <p class="s-lbl">Portfolio</p>
+      <h2 class="s-h">Selected work</h2>
+      <p class="s-sub">Real projects, real clients — across social, print, branding, and AI visuals. Replace placeholders with your screenshots.</p>
+    </div>
+  </div>
+
+  <div class="w-grid">
+
+    <div class="wc wc--w8 r">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="taar.jpg" alt="Connect With Taar" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Social Media Design — Tech Brand</p>
+          <h3 class="wc-title">Connect With Taar — Premium Charging Brand</h3>
+          <p class="wc-desc">Full social media management for a Pakistani tech accessories brand with 24K+ followers. Feed design, product visuals, campaigns, and AI-generated lifestyle imagery — consistently on-brand at scale.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/connectwithtaar/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="taar.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc r rd1">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="optic.jpg" alt="Optic World" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Social Media — Eyewear</p>
+          <h3 class="wc-title">Optic World</h3>
+          <p class="wc-desc">Ongoing seasonal campaigns, product posts, and promotions for a premium eyewear brand with 7K+ followers.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/opticworldlahore/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="optic.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc r">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="grill.jpg" alt="The Grill Heist UK" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Print &amp; Social — UK Restaurant</p>
+          <h3 class="wc-title">The Grill Heist, UK</h3>
+          <p class="wc-desc">International client. Large-format print campaigns and social content for a UK-based restaurant — FIFA World Cup poster, seasonal promotions.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/thegrillheist.uk/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="grill.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc r rd1">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="clear.jpg" alt="Clear Bio Relief USA" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Social Media — USA Wellness Brand</p>
+          <h3 class="wc-title">Clear Bio Relief, USA</h3>
+          <p class="wc-desc">Social content for a US-based natural skincare and pain relief brand — product visuals, campaign posts, AI-assisted imagery.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/clearbiorelief/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="clear.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc r rd2">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="arryn.jpg" alt="Arryn Couture" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Social Media — Fashion</p>
+          <h3 class="wc-title">Arryn Couture</h3>
+          <p class="wc-desc">Visual identity and social content for a Pakistani fashion label — lookbooks, product flat lays, campaign creatives.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/arryncouture/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="arryn.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc wc--w6 r">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="izhar.jpg" alt="Izhar Concrete" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Print &amp; Branding — Construction</p>
+          <h3 class="wc-title">Izhar Concrete &amp; Izhar Farms</h3>
+          <p class="wc-desc">Branding, standees, billboards, and company profile design for two subsidiaries of a large construction and agriculture group.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/izharconcreteofficial/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="izhar.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc wc--w6 r rd1">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="vohra.jpg" alt="Vohra &amp; Saigol" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Social Media — Menswear &amp; Womenswear</p>
+          <h3 class="wc-title">Vohra &amp; Saigol (Men &amp; Women)</h3>
+          <p class="wc-desc">Dual-account social media design for a high-end Pakistani fashion house — coordinated campaigns across men's and women's lines.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/vohraandsaigolmen/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="vohra.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wc wc--w6 r">
+      <div class="wc-inner">
+        <div class="wc-thumb"><img src="hockey.jpg" alt="Hockey Matchstick" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="wc-body">
+          <p class="wc-tag">Social Media — Sports Brand</p>
+          <h3 class="wc-title">Hockey Matchstick</h3>
+          <p class="wc-desc">Social media design for a Pakistani sports brand — match promotions, player features, event graphics, and campaign creatives.</p>
+          <div class="wc-footer">
+            <a href="https://www.instagram.com/hockeymaachispk/" target="_blank" class="wc-link">Instagram ↗</a>
+            <a href="hockey.html" class="btn-view-more">View More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- TOOLS SECTION -->
+<section id="tools">
+  <p class="s-lbl">Toolkit</p>
+  <h2 class="s-h">Tools I work with</h2>
+  <div class="tools-sections">
+
+    <!-- SOFTWARE -->
+    <div>
+      <p class="tools-section-title">Design Software</p>
+      <div class="tool-logo-grid">
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop">
+          <span>Photoshop</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Illustrator">
+          <span>Illustrator</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva">
+          <span>Canva</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro">
+          <span>Premiere Pro</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="After Effects">
+          <span>After Effects</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/CapCut_logo.svg/512px-CapCut_logo.svg.png" alt="CapCut">
+          <span>CapCut</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI TOOLS -->
+    <div>
+      <p class="tools-section-title">AI Tools</p>
+      <div class="tool-logo-grid">
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
+          <span>ChatGPT</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/344px-Google_Gemini_logo.svg.png" alt="Gemini">
+          <span>Gemini</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Midjourney_logo_%28stacked%29.svg" alt="Midjourney">
+          <span>Midjourney</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Photoroom-logo-FullColor.png/320px-Photoroom-logo-FullColor.png" alt="Photoroom">
+          <span>Photoroom</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://framerusercontent.com/images/xByFtMXkuMBEKoMgPPfAZBUBBDU.png" alt="Magnific">
+          <span>Magnific</span>
+        </div>
+        <div class="tool-logo-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camille_and_Blue_-_Born_in_the_Purple_(Anthropic_Claude_Logo).png/220px-Camille_and_Blue_-_Born_in_the_Purple_(Anthropic_Claude_Logo).png" alt="Claude">
+          <span>Claude AI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="hr">
+
+<section id="about" class="sec">
+  <div class="a-grid">
+    <div class="a-copy r">
+      <p class="s-lbl">About me</p>
+      <h2 class="s-h">4 years. 50+ clients. Zero missed deadlines.</h2>
+      <p>I'm Hamza, a graphic and social media designer based in <strong>Lahore, Pakistan</strong>. Over the last 4+ years I've worked with more than 50 clients — Lahore-based fashion labels, construction firms, tech brands, and international clients in the UK and USA.</p>
+      <p>My core work is <strong>social media design and print</strong>: feed content, campaigns, billboards, standees, and company profiles. I also integrate <strong>AI image generation</strong> tools into commercial workflows — producing studio-quality visuals efficiently, a skill most designers still don't offer.</p>
+      <p>I'm detail-oriented, responsive, and used to managing multiple clients simultaneously without quality slipping. In-house, agency, hybrid, or remote — I'm ready.</p>
+
+    </div>
+
+    <div class="a-aside">
+      <div class="aside-card r rd1">
+        <p class="ac-lbl">Experience</p>
+        <div class="ac-big">4+ yrs</div>
+        <p class="ac-sub">Professional design across national and international clients</p>
+      </div>
+      <div class="aside-card r rd2">
+        <p class="ac-lbl">Clients served</p>
+        <div class="ac-big">50+</div>
+        <p class="ac-sub">Fashion, tech, food, construction, wellness, and more</p>
+      </div>
+      <div class="aside-card r rd2">
+        <p class="ac-lbl">Specialties</p>
+        <ul class="spec-list">
+          <li>Social Media Design</li>
+          <li>Brand Identity</li>
+          <li>Creative Campaigns</li>
+          <li>Motion Graphics</li>
+          <li>Video Editing</li>
+          <li>Advertising Creatives</li>
+          <li>Visual Storytelling</li>
+          <li>Art Direction</li>
+          <li>Content Creation</li>
+          <li>AI-Assisted Design</li>
+        </ul>
+      </div>
+      <div class="aside-card r rd3">
+        <p class="ac-lbl">Industries served</p>
+        <div class="industries">
+          <span class="ind-chip">Fashion</span>
+          <span class="ind-chip">Tech</span>
+          <span class="ind-chip">Food &amp; Beverage</span>
+          <span class="ind-chip">Construction</span>
+          <span class="ind-chip">Wellness</span>
+          <span class="ind-chip">Eyewear</span>
+          <span class="ind-chip">Spa &amp; Lifestyle</span>
+          <span class="ind-chip">Sports</span>
+          <span class="ind-chip">Automotive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<section id="contact">
+  <div class="cg"></div>
+  <p class="s-lbl">Get in Touch</p>
+  <h2 class="s-h r">Ready to bring your brand to life?</h2>
+  <p class="s-sub r">I reply to every message within 24 hours. Whether you're hiring or have a project in mind, let's talk.</p>
+  <div class="contact-methods r">
+    <a href="mailto:hamzabinkhalid01@gmail.com" class="c-method">
+      <span class="c-method-icon">✉️</span>
+      <div>
+        <p class="c-method-label">Email</p>
+        <p class="c-method-value">hamzabinkhalid01@gmail.com</p>
+      </div>
+    </a>
+    <a href="tel:+923005363995" class="c-method">
+      <span class="c-method-icon">📞</span>
+      <div>
+        <p class="c-method-label">Phone / WhatsApp</p>
+        <p class="c-method-value">+92 300 5363995</p>
+      </div>
+    </a>
+  </div>
+  <a href="https://wa.me/923005363995?text=Hi%20Hamza%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="btn-p r" target="_blank">Send a Message on WhatsApp →</a>
+</section>
+
+<footer>
+  <p>&#169; 2026 Hamza Bin Khalid &mdash; Graphic &amp; Social Media Designer, Lahore, Pakistan</p>
+  <div class="f-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Behance</a>
+    <a href="#">Instagram</a>
+  </div>
+</footer>
+
+<script>
+// Role switcher
+const roles=['Graphic Designer','Social Media Designer','Video Editor'];
+let ri=0;
+const rw=document.getElementById('roleWord');
+setInterval(()=>{
+  rw.classList.add('fade');
+  setTimeout(()=>{ri=(ri+1)%roles.length;rw.textContent=roles[ri];rw.classList.remove('fade');},300);
+},3200);
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// Skill bars
+const bo=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.sk-fill').forEach(b=>{b.style.transform=`scaleX(${b.dataset.w})`;});
+      bo.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+const hc=document.querySelector('.h-card');
+if(hc)bo.observe(hc);
+</script>
+</body>
+</html>
