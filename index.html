@@ -116,10 +116,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 #tools .tools-sections{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:52px}
 .tools-section-title{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .tool-logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.tool-logo-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:border-color .2s,transform .2s;cursor:default}
+.tool-logo-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:24px 14px;display:flex;flex-direction:column;align-items:center;gap:12px;transition:border-color .2s,transform .2s;cursor:default;overflow:hidden}
 .tool-logo-card:hover{border-color:rgba(232,93,38,.35);transform:translateY(-2px)}
-.tool-logo-card img{width:36px;height:36px;object-fit:contain;filter:grayscale(20%)}
-.tool-logo-card span{font-size:12px;font-weight:600;color:var(--muted);text-align:center;line-height:1.3}
+.tool-logo-card img{width:48px;height:48px;object-fit:contain;display:block;flex-shrink:0}
+.tool-logo-card span{font-size:12px;font-weight:600;color:var(--muted);text-align:center;line-height:1.3;white-space:nowrap}
 
 /* ABOUT */
 #about{background:var(--bg2)}
